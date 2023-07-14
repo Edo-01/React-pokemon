@@ -1,0 +1,44 @@
+.sfondoFixed{
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    background:url('../img/back-desk.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+background: rgba(243, 243, 243, 0.40);
+box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
+width: 100%;
+max-width: 500px;
+}
+.rigaUno {
+    border-radius: 6px 6px 0px 0px;
+background: rgba(132, 111, 204, 0.65);
+display: flex;
+justify-content: center;
+padding: 10px ;
+margin-bottom: 5px;
+}
+
+.rigaDue {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rigaDue h2 {
+    color:#47338D;
+    margin-top: 20px;
+}

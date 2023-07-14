@@ -1,0 +1,153 @@
+/* 
+@keyframes ruotaLoading {
+    from {transform: rotate(0deg) scale(0.5);}
+    to {transform: rotate(360deg) scale(1);}
+} */
+
+@keyframes ruotaLoading {
+   0%{transform: rotate(0deg) scale(0.5);}
+    50%{transform: rotate(180deg) scale(1);}
+    100%{transform: rotate(360deg) scale(0.5);}
+}
+.conatinerUno {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px 35px;
+  
+}
+.containerSearch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 35px;
+    
+    margin-bottom: 55px;
+    position: sticky;
+    top: 0px
+}
+.contenitoreInput {
+    width: 100%;
+    max-width: 325px;
+    
+    position: relative;
+}
+.containerSearch input {
+    width: 100%;
+    border-radius: 30px;
+background: rgba(243, 243, 243, 0.66);
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+backdrop-filter: blur(5px);
+border: 0px solid #ffffff;
+font-size: 15px;
+font-family:  Inter,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+padding: 14px 85px 14px 55px;
+color: #846FCC;
+font-weight: 500;
+
+}
+
+.containerSearch input:focus{
+   outline: 2px solid #846FCC;
+}
+.imgPersonaggioInput {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+.tastoCerca {
+    cursor: pointer;
+    width: 75px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    padding-right: 20px;
+}
+.containerBall {
+    
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBall p {
+    color: #47338D;
+    font-weight: 500;
+    font-size: 13px;
+    
+}
+.contatoreBall {
+    background-color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1px;
+    right: 5px;
+}
+.contatoreBall span {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #47338D;
+}
+.containerScheda {
+    
+    width: 100%;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.tastoStella {
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.12));
+    cursor: pointer;
+}
+.containerError {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.containerError h2 {
+    text-align: center;
+    color: #47338D;
+    margin-top: 15px;
+}
+.containerLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.containerLoading h2 {
+    text-align: center;
+    color: #47338D;
+    margin-top: 15px;
+}
+.containerLoading img{
+    animation-name: ruotaLoading;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+}

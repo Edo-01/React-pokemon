@@ -1,0 +1,11 @@
+.sfondoFixed {
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    background:url('../img/sfondo.png');
+    background-position: center;
+    background-size: cover;
+}

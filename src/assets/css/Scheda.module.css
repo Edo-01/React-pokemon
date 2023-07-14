@@ -1,0 +1,314 @@
+
+
+.baseScheda{
+    width: 100%;
+    max-width: 360px;
+    border-radius: 6px;
+    background: rgba(243, 243, 243, 0.40);
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(10px);
+}
+.rigaUnoScheda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0px 0px;
+    background: rgba(132, 111, 204, 0.65);
+    padding: 4px 15px;
+    color: #fff;
+    overflow: hidden;
+    height: 40px;
+}
+.boxNumber {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 26%;
+}
+.boxNumber  img {
+    margin-right: 10px;
+   
+}
+.boxNumber  p{
+    font-size: 12px;
+    font-weight: 500;
+    
+   
+}
+.rigaUnoScheda > h3 {
+    width: 48%;
+    text-align: center;
+    font-size: 16px;
+}
+.boxStella {
+    width: 26%;
+    display: flex;
+    justify-content: flex-end;
+   
+    
+}
+.tastoStella {
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.12));
+    cursor: pointer;
+}
+.centroScheda {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    position: relative;
+}
+.centroScheda > p {
+    color: #846FCC;
+    font-size: 14px;
+    margin: 15px 0px 0px 15px;
+    font-weight: 500;
+}
+
+.centroScheda > img {
+   width: 200px;
+   height: 200px;
+}
+.tastoRouta {
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.12));
+    cursor: pointer; 
+    margin: 15px 15px 0px 0px;
+}
+.boxDettagliSkill {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    justify-content: space-between;
+}
+.boxDettagliSkill span {
+    color: #fff;
+    font-size: 12px ;
+    font-weight: 400;
+}
+.fineScheda {
+    background: rgba(255, 255, 255, 0.60);
+    margin: 0 15px 15px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    color: #846FCC;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* INIZIO set colori ------------------------------------------------ */
+
+
+.skillGrass {
+    background-color: #2E961D;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillPoison {
+    background-color: #47338D;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillNormal {
+    background-color: #846FCC;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillFire{
+    background-color: #A50000;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillWater{
+    background-color: #0080A8;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillElectric{
+    background-color: #A7A7A7;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillIce{
+    background-color: #4B77A0;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillFighting{
+    background-color: #620000;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillGround{
+    background-color: #57321D;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillFlying{
+    background-color: #2E99B0;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillPsychic{
+    background: linear-gradient(270deg, #C00096 0%, #120084 100%);
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillBug{
+    background-color: #452B2B;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillRock{
+    background-color: #6C6C6C;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillGhost{
+    background-color: #B79999;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillDark{
+    background-color: #151515;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillDragon{
+    background-color: #D37F00;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillSteel{
+    background-color: #B72C00;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillFairy{
+    background-color: #AD459D;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+.skillDefault {
+    background-color: #846FCC;
+    padding: 2px 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    min-width: 74px;
+}
+
+/* FINE set colori ------------------------------------------------ */
