@@ -11,6 +11,7 @@ function Vista() {
 
   function cercaDato(parRefInput) {
     let baseIndirizzo = "https://pokeapi.co/api/v2/pokemon/";
+
     async function richiesta() {
       setPokemonRicerca(false);
       setLoading(true);
@@ -20,6 +21,7 @@ function Vista() {
         let obj = await risp.json();
         setPokemonRicerca(obj);
         setLoading(false);
+        setInputSearch("");
       } catch (error) {
         console.log("Ops! C'è stato un errore");
         setErrore(true);
@@ -33,6 +35,7 @@ function Vista() {
       richiesta();
     }
   }
+
   function addPreferiti() {
     let test = controllaPresenza(pokemonRicerca.id);
     if (test === undefined) {
@@ -53,7 +56,6 @@ function Vista() {
     return elemTrovato; // se è vero ha trovato, se no torna undefined
   }
 
-  console.log(pokemonPreferiti);
   return (
     <>
       <div className={style.sfondoFixed}></div>

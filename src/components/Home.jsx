@@ -56,18 +56,31 @@ function Home({
       </div>
       <div className={style.containerSearch}>
         <div className={style.contenitoreInput}>
-          <input
-            ref={inputRef}
-            onChange={hendlerChange}
-            value={inputSearch}
-            type="text"
-            placeholder="Search your Pokèmon"
-            maxLength={20}
-          />
-          <img className={style.imgPersonaggioInput} src={personaggio} alt="" />
-          <div onClick={() => cercaDato(inputRef)} className={style.tastoCerca}>
-            <img src={icoCerca} alt="" />
-          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <input
+              ref={inputRef}
+              onChange={hendlerChange}
+              value={inputSearch}
+              type="text"
+              placeholder="Search your Pokèmon"
+              maxLength={20}
+            />
+            <img
+              className={style.imgPersonaggioInput}
+              src={personaggio}
+              alt=""
+            />
+            <button
+              onClick={() => cercaDato(inputRef)}
+              className={style.tastoCerca}
+            >
+              <img src={icoCerca} alt="" />
+            </button>
+          </form>
         </div>
       </div>
 

@@ -13,16 +13,16 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 50px 20px 35px;
+    padding: 40px 20px 35px;
   
 }
 .containerSearch {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px 20px 35px;
+    padding: 20px 20px 30px;
     
-    margin-bottom: 55px;
+    margin-bottom: 20px;
     position: sticky;
     top: 0px
 }
@@ -57,6 +57,8 @@ font-weight: 500;
     transform: translateY(-50%);
 }
 .tastoCerca {
+    border: 0px solid #fff;
+    background-color: transparent;
     cursor: pointer;
     width: 75px;
     height: 40px;
@@ -111,6 +113,7 @@ font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 80px;
 }
 .tastoStella {
     background-color: #fff;
