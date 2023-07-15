@@ -55,7 +55,7 @@ function Vista() {
     });
     return elemTrovato; // se è vero ha trovato, se no torna undefined
   }
-
+  console.log(pokemonRicerca);
   return (
     <>
       <div className={style.sfondoFixed}></div>

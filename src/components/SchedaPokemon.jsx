@@ -82,6 +82,14 @@ function scegliClasse(nome) {
   }
 }
 
+function formattaMisure(num) {
+  let formato = num * 0.1;
+  let strCorta = formato.toFixed(1);
+
+  let conVirgola = strCorta.replace(".", ",");
+  return conVirgola;
+}
+
 function Scheda({ children, pokemonRicerca }) {
   const [imgFront, setImgFront] = useState(true);
   function ruotaImg() {
@@ -96,7 +104,7 @@ function Scheda({ children, pokemonRicerca }) {
             N° <span>{pokemonRicerca.order}</span>
           </p>
         </div>
-        <h3>{pokemonRicerca.name}</h3>
+        <h3 className={style.nomePokemon}>{pokemonRicerca.name}</h3>
         <div className={style.boxStella}>{children}</div>
       </div>
       <div className={style.centroScheda}>
@@ -121,12 +129,20 @@ function Scheda({ children, pokemonRicerca }) {
         </div>
       </div>
       <div className={style.fineScheda}>
-        <p>
-          Weight: <span>{pokemonRicerca.weight}</span>
-        </p>
-        <p>
-          Height: <span>{pokemonRicerca.height}</span>
-        </p>
+        <div className={style.rigaFineScheda}>
+          <p>
+            Weight: <span>{formattaMisure(pokemonRicerca.weight)} kg</span>
+          </p>
+          <p>
+            Height: <span>{formattaMisure(pokemonRicerca.height)} m</span>
+          </p>
+        </div>
+        <div className={style.rigaFineScheda}>
+          <p>Abilities:</p>
+          {pokemonRicerca.abilities.map((obj, index) => {
+            return <span key={index}>{obj.ability.name}</span>;
+          })}
+        </div>
       </div>
     </div>
   );

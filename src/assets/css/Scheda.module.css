@@ -63,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    
+    min-height: 230px;
     position: relative;
 }
 .centroScheda > p {
@@ -109,11 +109,35 @@
     padding: 10px 10px;
     border-radius: 5px;
     display: flex;
-    justify-content:space-between ;
+    flex-direction: column;
+    justify-content:flex-start ;
     align-items: center;
     color: #846FCC;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500; 
+}
+.rigaFineScheda {
+    
+    width: 100%;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding-bottom: 5.5px;
+    border-bottom: 1px solid #846FCC;
+    margin-bottom: 7.5px;
+}
+.rigaFineScheda:last-of-type{
+    padding-bottom: 0px;
+    border-bottom: 0px solid #846FCC;
+    margin-bottom: 0px;
+}
+.rigaFineScheda:last-of-type span{
+    background-color: #d8d4e4;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+.nomePokemon {
+    text-transform: capitalize;
 }
 
 
