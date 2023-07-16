@@ -10,9 +10,9 @@ import pokemonError from "../assets/img/pokemon-errore.png";
 import gruppoPalle from "../assets/img/gruppo-stelle.png";
 import { useRef } from "react";
 
-function BallPreferiti({ pokemonPreferiti }) {
+function BallPreferiti({ pokemonPreferiti, cambiaPag }) {
   return (
-    <div className={style.containerBall}>
+    <div onClick={cambiaPag("preferiti")} className={style.containerBall}>
       {pokemonPreferiti.length === 0 ? null : (
         <div className={style.contatoreBall}>
           <span>{pokemonPreferiti.length}</span>
@@ -34,6 +34,7 @@ function Home({
   pokemonRicerca,
   addPreferiti,
   pokemonPreferiti,
+  cambiaPag,
 }) {
   let inputRef = useRef(null);
 
@@ -111,7 +112,10 @@ function Home({
           </Scheda>
         ) : null}
       </div>
-      <BallPreferiti pokemonPreferiti={pokemonPreferiti} />
+      <BallPreferiti
+        pokemonPreferiti={pokemonPreferiti}
+        cambiaPag={cambiaPag}
+      />
     </>
   );
 }

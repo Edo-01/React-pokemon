@@ -138,7 +138,6 @@ function Scheda({ children, pokemonRicerca }) {
           </p>
         </div>
         <div className={style.rigaFineScheda}>
-          <p>Abilities:</p>
           {pokemonRicerca.abilities.map((obj, index) => {
             return <span key={index}>{obj.ability.name}</span>;
           })}
