@@ -6,6 +6,8 @@ import dorme from "../assets/img/pokemon-dorme.png";
 import vedi from "../assets/img/ico-vedi.png";
 import { useEffect, useRef } from "react";
 
+import Filtro from "./Filtro";
+
 function NessunPref() {
   return (
     <div className={style.containerNoPref}>
@@ -75,7 +77,7 @@ function Preferiti({
       </div>
       {pokemonPreferiti.length === 0 ? null : (
         <div className={style.containerFiltri}>
-          <p>filtri</p>
+          <Filtro />
         </div>
       )}
       {pokemonPreferiti.length === 0 ? (

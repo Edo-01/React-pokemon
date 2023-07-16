@@ -1,0 +1,76 @@
+
+
+.boxFiltro {
+    width: 100%;
+    border-radius: 4px;
+background: #846FCC;
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+color: #fff;
+}
+.filtroTitolo::before {
+position: relative;
+ content: url('../img/ico-tendina.png');
+ margin-right: 5px;
+ top: 1px
+}
+.rigaVisibile {
+    width: 100%; 
+    display: flex;
+justify-content: space-between;
+align-items: center;
+color: #fff;
+padding: 10px;
+
+}
+.colImg {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30px;
+    transform: rotate(0deg);
+    transform-origin: center center;
+    transition: all 0.3s;
+}
+
+.colImgOpen {
+transform: rotate(180deg);
+transform-origin: center center;
+transition: all 0.3s;
+}
+
+.corpoEsteso {
+    
+    overflow: hidden;
+    height: 0px;
+    transition: all 0.3s;
+}
+.corpoEstesoAperto {
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+
+
+.gruppoRighe {
+    width: 100%;
+    padding: 10px;
+}
+.rigaCorpo {
+    width: 100%; 
+    padding: 5px 0px;
+}
+.rigaUno {
+    border: 1px solid green;
+}
+.rigaDue{
+    border: 1px solid green;
+}
+.rigaTre {
+    border: 1px solid green;
+}
+.rigaQuattro {
+    border: 1px solid green;
+}
+.rigaCinque {
+    border: 1px solid green;
+}

@@ -41,7 +41,6 @@
 }
 .containerFiltri {
     width: 100%;
-    border: 1px solid rgba(61, 61, 61, 0.247);
     display: flex;
     justify-content: center;
     align-items: flex-start;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "../assets/css/Vista.module.css";
 import Home from "./Home";
 import Preferiti from "./Preferiti";
