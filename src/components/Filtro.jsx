@@ -43,11 +43,50 @@ function Filtro() {
         className={`${aperto ? style.corpoEstesoAperto : style.corpoEsteso}`}
       >
         <div ref={contenutoTendaRef} className={style.gruppoRighe}>
-          <div className={style.rigaCorpo + " " + style.rigaUno}>riga1</div>
-          <div className={style.rigaCorpo + " " + style.rigaDue}>riga2</div>
-          <div className={style.rigaCorpo + " " + style.rigaTre}>riga3</div>
-          <div className={style.rigaCorpo + " " + style.rigaQuattro}>riga4</div>
-          <div className={style.rigaCorpo + " " + style.rigaCinque}>riga5</div>
+          <div className={style.rigaCorpo + " " + style.rigaUno}>
+            <p>Pokèmon type</p>
+            <select name="" id="">
+              <option value="">Normal</option>
+              <option value="">Fire</option>
+              <option value="">Water</option>
+              <option value="">Grass</option>
+              <option value="">Electric</option>
+              <option value="">Ice</option>
+              <option value="">Fighting</option>
+              <option value="">Poison</option>
+              <option value="">Ground</option>
+              <option value="">Flying</option>
+              <option value="">Psychic</option>
+              <option value="">Bug</option>
+              <option value="">Rock</option>
+              <option value="">Ghost</option>
+              <option value="">Dark</option>
+              <option value="">Dragon</option>
+              <option value="">Steel</option>
+              <option value="">Fairy</option>
+            </select>
+          </div>
+          <div className={style.rigaCorpo + " " + style.rigaDue}>
+            <p className={style.filtroOrder}>Order by</p>
+          </div>
+          <div className={style.rigaCorpo + " " + style.rigaTre}>
+            <div className={style.colRiga3A}>
+              <p>PV</p>
+              <button className={style.colRiga3BottUno}>Asc</button>
+              <button>Des</button>
+            </div>
+            <div className={style.colRiga3B}>
+              <p>Number</p>
+              <button className={style.colRiga3BottUno}>Asc</button>
+              <button>Des</button>
+            </div>
+          </div>
+          <div className={style.rigaCorpo + " " + style.rigaQuattro}>
+            <p>Remove filter</p>
+          </div>
+          <div className={style.rigaCorpo + " " + style.rigaCinque}>
+            <button className={style.apply}>Apply</button>
+          </div>
         </div>
       </div>
     </div>

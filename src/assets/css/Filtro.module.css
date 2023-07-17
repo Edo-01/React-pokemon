@@ -6,6 +6,7 @@
 background: #846FCC;
 box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
 color: #fff;
+
 }
 .filtroTitolo::before {
 position: relative;
@@ -20,6 +21,7 @@ justify-content: space-between;
 align-items: center;
 color: #fff;
 padding: 10px;
+cursor: pointer;
 
 }
 .colImg {
@@ -58,19 +60,107 @@ transition: all 0.3s;
 .rigaCorpo {
     width: 100%; 
     padding: 5px 0px;
+    min-height: 40px;
 }
 .rigaUno {
-    border: 1px solid green;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rigaUno p {
+   color: #47338D;
+   font-size: 15px;
+   font-weight: 600;
+}
+.rigaUno select {
+    width: 60%;
+    min-height: 30px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.60);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
+    color: #47338D;
+    font-size: 16px;
+    padding: 0px 0px 0px 10px;
+}
+.rigaUno select:focus{
+    outline: 2px solid #6d59af;
+    color: #47338D;
+    
+    
 }
 .rigaDue{
-    border: 1px solid green;
+    border-top: 1px solid #7258CB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 .rigaTre {
-    border: 1px solid green;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.colRiga3A {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
+}
+.colRiga3B {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end ;
+    align-items: center;
+}
+.colRiga3A p, .colRiga3B p {
+    margin-right:  8px;
+    color: #47338D;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.colRiga3A button, .colRiga3B button{
+    border: 0px solid #fff;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.60);
+    padding: 3px 7px;
+    font-size: 15px;
+    color: #846FCC;
+}
+.colRiga3BottUno {
+    margin-right: 5px;
+}
+
 .rigaQuattro {
-    border: 1px solid green;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.rigaQuattro  p {
+    text-decoration: underline;
 }
 .rigaCinque {
-    border: 1px solid green;
+     
 }
+
+.filtroOrder::before {
+    position: relative;
+     content: url('../img/ico-order.svg');
+     margin-right: 5px;
+     top: 1px
+    }
+
+ .apply {
+    border: 0px solid #fff;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 20px;
+background: #47338D;
+box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
+padding: 5px 10px;
+color: #fff;
+
+ }   
