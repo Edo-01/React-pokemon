@@ -12,6 +12,14 @@ function Vista() {
   const [errore, setErrore] = useState(false);
   const [pokemonPreferiti, setPokemonPreferiti] = useState([]);
   const [mostraPref, setMostraPref] = useState([]);
+  const [filtroAttivo, setFiltroAttivo] = useState(false);
+
+  const [inputSelect, setInputSelect] = useState("normal");
+  const [ordineFiltro, setOrdineFiltro] = useState("pvasc"); // pvasc-pvdes-numasc-numdes
+  const [filtro, setFiltro] = useState({
+    pokemonType: inputSelect,
+    order: ordineFiltro,
+  });
 
   function mostraSingolo(pagina, obj) {
     return function (e) {
@@ -108,6 +116,14 @@ function Vista() {
           pokemonPreferiti={pokemonPreferiti}
           cancellaPref={cancellaPref}
           mostraSingolo={mostraSingolo}
+          filtroAttivo={filtroAttivo}
+          setFiltroAttivo={setFiltroAttivo}
+          inputSelect={inputSelect}
+          setInputSelect={setInputSelect}
+          ordineFiltro={ordineFiltro}
+          setOrdineFiltro={setOrdineFiltro}
+          filtro={filtro}
+          setFiltro={setFiltro}
         />
       ) : null}
       {paginaAttiva === "preferito" ? (

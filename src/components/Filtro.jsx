@@ -12,6 +12,7 @@ function Filtro({
   setAperto,
   rimuoviFiltri,
   inputSelect,
+  filtroAttivo,
 }) {
   // const [aperto, setAperto] = useState(false);
 
@@ -50,7 +51,9 @@ function Filtro({
       >
         <div className={style.colImg}></div>
         <div>
-          <p className={style.filtroTitolo}>Filter</p>
+          <p className={style.filtroTitolo}>
+            Filter {filtroAttivo ? "(1)" : null}
+          </p>
         </div>
         <div
           className={
@@ -147,12 +150,14 @@ function Filtro({
               </button>
             </div>
           </div>
-          <div className={style.rigaCorpo + " " + style.rigaQuattro}>
-            <p>
-              <span onClick={rimuoviFiltri}>Remove filter</span>
-            </p>
-          </div>
+
           <div className={style.rigaCorpo + " " + style.rigaCinque}>
+            {filtroAttivo ? (
+              <button onClick={rimuoviFiltri} className={style.removeFilterBtn}>
+                Remove filter
+              </button>
+            ) : null}
+
             <button onClick={impostaFiltro} className={style.apply}>
               Apply
             </button>

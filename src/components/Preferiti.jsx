@@ -59,15 +59,17 @@ function Preferiti({
   pokemonPreferiti,
   cancellaPref,
   mostraSingolo,
+  filtroAttivo,
+  setFiltroAttivo,
+  inputSelect,
+  setInputSelect,
+  ordineFiltro,
+  setOrdineFiltro,
+  filtro,
+  setFiltro,
 }) {
-  const [filtroAttivo, setFiltroAttivo] = useState(false); //stato che controllerà la visualizzazione di tutti i preferiti (dato originale) oppure i filtri(copia del originale)
   const [aperto, setAperto] = useState(false);
-  const [inputSelect, setInputSelect] = useState("normal");
-  const [ordineFiltro, setOrdineFiltro] = useState("pvasc"); // pvasc-pvdes-numasc-numdes
-  const [filtro, setFiltro] = useState({
-    pokemonType: inputSelect,
-    order: ordineFiltro,
-  });
+
   function impostaFiltro() {
     setFiltro({
       pokemonType: inputSelect,
@@ -190,6 +192,7 @@ function Preferiti({
             setAperto={setAperto}
             rimuoviFiltri={rimuoviFiltri}
             inputSelect={inputSelect}
+            filtroAttivo={filtroAttivo}
           />
         </div>
       )}
@@ -213,5 +216,5 @@ function Preferiti({
     </>
   );
 }
-// containerAvvisoFiltro
+
 export default Preferiti;
