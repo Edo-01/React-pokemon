@@ -20,6 +20,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 20px 20px 30px;
     
     margin-bottom: 20px;
@@ -27,10 +29,24 @@
     top: 0px
 }
 .contenitoreInput {
-    width: 100%;
-    max-width: 325px;
+    width: 100%; 
+    max-width: 400px;
     
     position: relative;
+}
+.contenitoreTesto {
+    width: 100%; 
+    max-width: 400px;
+    
+    display: flex;
+    padding-top: 10px;
+    justify-content: flex-end;
+}
+.contenitoreTesto p {
+    color: #846FCC;
+    font-size: 14px;
+font-style: normal;
+font-weight: 600;
 }
 .containerSearch input {
     width: 100%;

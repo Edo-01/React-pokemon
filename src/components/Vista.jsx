@@ -3,6 +3,7 @@ import style from "../assets/css/Vista.module.css";
 import Home from "./Home";
 import Preferiti from "./Preferiti";
 import Preferto from "./Preferto";
+import Cronologia from "./Cronologia";
 
 function Vista() {
   const [paginaAttiva, setPaginaAttiva] = useState("home");
@@ -20,6 +21,7 @@ function Vista() {
     pokemonType: inputSelect,
     order: ordineFiltro,
   });
+  const [pokemonCronologia, setPokemonCronologia] = useState([]);
 
   function mostraSingolo(pagina, obj) {
     return function (e) {
@@ -48,6 +50,7 @@ function Vista() {
         setPokemonRicerca(obj);
         setLoading(false);
         setInputSearch("");
+        setPokemonCronologia([...pokemonCronologia, obj]);
       } catch (error) {
         console.log("Ops! C'è stato un errore");
         setErrore(true);
@@ -93,7 +96,7 @@ function Vista() {
       );
     };
   }
-
+  console.log(pokemonCronologia);
   return (
     <>
       <div className={style.sfondoFixed}></div>
@@ -108,6 +111,7 @@ function Vista() {
           addPreferiti={addPreferiti}
           pokemonPreferiti={pokemonPreferiti}
           cambiaPag={cambiaPag}
+          pokemonCronologia={pokemonCronologia}
         />
       ) : null}
       {paginaAttiva === "preferiti" ? (
@@ -128,6 +132,12 @@ function Vista() {
       ) : null}
       {paginaAttiva === "preferito" ? (
         <Preferto cambiaPag={cambiaPag} mostraPref={mostraPref} />
+      ) : null}
+      {paginaAttiva === "cronologia" ? (
+        <Cronologia
+          cambiaPag={cambiaPag}
+          pokemonCronologia={pokemonCronologia}
+        />
       ) : null}
     </>
   );

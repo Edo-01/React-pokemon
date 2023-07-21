@@ -35,6 +35,7 @@ function Home({
   addPreferiti,
   pokemonPreferiti,
   cambiaPag,
+  pokemonCronologia,
 }) {
   let inputRef = useRef(null);
 
@@ -82,6 +83,11 @@ function Home({
               <img src={icoCerca} alt="" />
             </button>
           </form>
+        </div>
+        <div className={style.contenitoreTesto}>
+          {pokemonCronologia.length > 0 ? (
+            <p onClick={cambiaPag("cronologia")}>Search history</p>
+          ) : null}
         </div>
       </div>
 
