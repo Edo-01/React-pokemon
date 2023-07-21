@@ -22,6 +22,7 @@ function Vista() {
     order: ordineFiltro,
   });
   const [pokemonCronologia, setPokemonCronologia] = useState([]);
+  const [displayHistory, setDisplayHistory] = useState(5);
 
   function mostraSingolo(pagina, obj) {
     return function (e) {
@@ -50,7 +51,7 @@ function Vista() {
         setPokemonRicerca(obj);
         setLoading(false);
         setInputSearch("");
-        setPokemonCronologia([...pokemonCronologia, obj]);
+        setPokemonCronologia([obj, ...pokemonCronologia]);
       } catch (error) {
         console.log("Ops! C'è stato un errore");
         setErrore(true);
@@ -96,6 +97,10 @@ function Vista() {
       );
     };
   }
+  function cancCrono() {
+    setPokemonCronologia([]);
+    setDisplayHistory(5);
+  }
   console.log(pokemonCronologia);
   return (
     <>
@@ -137,6 +142,9 @@ function Vista() {
         <Cronologia
           cambiaPag={cambiaPag}
           pokemonCronologia={pokemonCronologia}
+          displayHistory={displayHistory}
+          setDisplayHistory={setDisplayHistory}
+          cancCrono={cancCrono}
         />
       ) : null}
     </>
