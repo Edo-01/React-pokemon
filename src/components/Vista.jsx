@@ -23,6 +23,106 @@ function Vista() {
   });
   const [pokemonCronologia, setPokemonCronologia] = useState([]);
   const [displayHistory, setDisplayHistory] = useState(5);
+  // aggiungo ------------
+
+  const [lista, setLista] = useState([]); // stato per raccogliere fetch di lista pokemon ricerca
+  const [lisatCorrispondenza, setListaCorrispondenza] = useState([]); // arrai di nomi corrispondenti
+  const [listaOpen, setListaOpen] = useState(false);
+
+  function hendlerChange(e) {
+    let testo = e.target.value;
+    setInputSearch(testo.toLowerCase().trim());
+    console.log(testo);
+    autocomplete(testo);
+  }
+
+  //autocomplete----------------------------------------------------------
+
+  useEffect(() => {
+    async function richiedi() {
+      try {
+        let risp = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+        );
+        let obj = await risp.json();
+        setLista(obj.results); //arry di obj
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    richiedi();
+  }, []);
+
+  function autocomplete(testo) {
+    let corrispondenza = lista.filter((obj) => {
+      if (testo.length === 1) {
+        return obj.name[0].includes(testo[0]);
+      }
+      if (testo.length === 2) {
+        return obj.name[0].includes(testo[0]) && obj.name[1].includes(testo[1]);
+      }
+      if (testo.length === 3) {
+        return (
+          obj.name[0].includes(testo[0]) &&
+          obj.name[1].includes(testo[1]) &&
+          obj.name[2].includes(testo[2])
+        );
+      }
+      if (testo.length === 4) {
+        return (
+          obj.name[0].includes(testo[0]) &&
+          obj.name[1].includes(testo[1]) &&
+          obj.name[2].includes(testo[2]) &&
+          obj.name[3].includes(testo[3])
+        );
+      }
+    });
+    let corrispondenzaNomi = corrispondenza.map((obj) => {
+      return obj.name;
+    });
+    let primiNomi = corrispondenzaNomi.slice(0, 10);
+
+    setListaCorrispondenza(primiNomi); // array di nomi corrispondenti
+    setListaOpen(true);
+  }
+
+  console.log(lisatCorrispondenza);
+
+  function sceltaLista(param, parRefInput) {
+    console.log(param);
+
+    let baseIndirizzo = "https://pokeapi.co/api/v2/pokemon/";
+
+    async function richiesta() {
+      setPokemonRicerca(false);
+      setLoading(true);
+      setErrore(false);
+      try {
+        let risp = await fetch(baseIndirizzo + param);
+        let obj = await risp.json();
+        setPokemonRicerca(obj);
+        setLoading(false);
+        setInputSearch("");
+        setPokemonCronologia([obj, ...pokemonCronologia]);
+        setListaOpen(false);
+      } catch (error) {
+        console.log("Ops! C'è stato un errore");
+        setErrore(true);
+        setLoading(false);
+        setListaOpen(false);
+      }
+    }
+    if (inputSearch === "") {
+      parRefInput.current.focus();
+      console.log("Non hai scritto nulla!");
+    } else {
+      richiesta();
+    }
+  }
+
+  //autocomplete----------------------------------------------------------
+
+  // aggiungo ------------
 
   function mostraSingolo(pagina, obj) {
     return function (e) {
@@ -56,6 +156,7 @@ function Vista() {
         console.log("Ops! C'è stato un errore");
         setErrore(true);
         setLoading(false);
+        setListaOpen(false);
       }
     }
     if (inputSearch === "") {
@@ -101,7 +202,7 @@ function Vista() {
     setPokemonCronologia([]);
     setDisplayHistory(5);
   }
-  console.log(pokemonCronologia);
+
   return (
     <>
       <div className={style.sfondoFixed}></div>
@@ -117,6 +218,10 @@ function Vista() {
           pokemonPreferiti={pokemonPreferiti}
           cambiaPag={cambiaPag}
           pokemonCronologia={pokemonCronologia}
+          hendlerChange={hendlerChange}
+          lisatCorrispondenza={lisatCorrispondenza}
+          sceltaLista={sceltaLista}
+          listaOpen={listaOpen}
         />
       ) : null}
       {paginaAttiva === "preferiti" ? (
