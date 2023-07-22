@@ -88,14 +88,19 @@ function Preferiti({
   }
 
   const titleRef = useRef(null);
+  const h2Ref = useRef(null);
   useEffect(() => {
     function segna() {
       if (titleRef.current.offsetTop > 65) {
-        titleRef.current.style.backgroundColor = "rgba(132, 111, 204, 0.65)";
+        titleRef.current.style.backgroundColor = "rgba(132, 111, 204)";
+        titleRef.current.style.padding = "12px 20px";
+        h2Ref.current.style.color = "#F3F3F3";
       } else {
         titleRef.current.removeAttribute("style");
+        h2Ref.current.removeAttribute("style");
       }
     }
+
     window.addEventListener("scroll", segna);
     return () => {
       window.removeEventListener("scroll", segna);
@@ -118,8 +123,6 @@ function Preferiti({
       pokemonFiltartiGlobal = pokemonFiltarti.concat(pokemonFiltarti2);
     }
 
-    console.log(pokemonPreferiti);
-    console.log(pokemonFiltartiGlobal);
     if (order === "pvasc") {
       pokemonFiltartiGlobal.sort(function (a, b) {
         return a.stats[0].base_stat - b.stats[0].base_stat;
@@ -141,8 +144,6 @@ function Preferiti({
   }
 
   const prefertiDatiFiltro = ordina(filtro.pokemonType, filtro.order); // qui ho un array di dati filtrati in base ai parametri
-
-  console.log(prefertiDatiFiltro);
 
   const soloPreferitiFiltrati = prefertiDatiFiltro.map((obj) => {
     return (
@@ -179,7 +180,7 @@ function Preferiti({
         </div>
       </div>
       <div ref={titleRef} className={style.containerTitle}>
-        <h2>My favorites</h2>
+        <h2 ref={h2Ref}>My favorites</h2>
       </div>
       {pokemonPreferiti.length === 0 ? null : (
         <div className={style.containerFiltri}>

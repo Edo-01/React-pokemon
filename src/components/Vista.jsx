@@ -32,7 +32,7 @@ function Vista() {
   function hendlerChange(e) {
     let testo = e.target.value;
     setInputSearch(testo.toLowerCase().trim());
-    console.log(testo);
+
     autocomplete(testo);
   }
 
@@ -86,11 +86,7 @@ function Vista() {
     setListaOpen(true);
   }
 
-  console.log(lisatCorrispondenza);
-
   function sceltaLista(param, parRefInput) {
-    console.log(param);
-
     let baseIndirizzo = "https://pokeapi.co/api/v2/pokemon/";
 
     async function richiesta() {

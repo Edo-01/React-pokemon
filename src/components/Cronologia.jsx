@@ -6,7 +6,7 @@ import cestino from "../assets/img/ico-cestino.png";
 import copia from "../assets/img/ico-copy.svg";
 
 import vedi from "../assets/img/ico-vedi.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function CardHistory({ obj, children }) {
   const [copy, setCopy] = useState(false);
@@ -71,6 +71,25 @@ function Cronologia({
   setDisplayHistory,
   cancCrono,
 }) {
+  const titleCronoRef = useRef(null);
+  const h2CronoRef = useRef(null);
+  useEffect(() => {
+    function segna() {
+      if (titleCronoRef.current.offsetTop > 65) {
+        titleCronoRef.current.style.backgroundColor = "rgba(132, 111, 204)";
+        titleCronoRef.current.style.padding = "12px 20px";
+        h2CronoRef.current.style.color = "#F3F3F3";
+      } else {
+        titleCronoRef.current.removeAttribute("style");
+        h2CronoRef.current.removeAttribute("style");
+      }
+    }
+
+    window.addEventListener("scroll", segna);
+    return () => {
+      window.removeEventListener("scroll", segna);
+    };
+  }, []);
   return (
     <>
       <div className={style.containerNav}>
@@ -79,8 +98,8 @@ function Cronologia({
           <p>Back</p>
         </div>
       </div>
-      <div className={style.containerTitle}>
-        <h2>Search history</h2>
+      <div ref={titleCronoRef} className={style.containerTitle}>
+        <h2 ref={h2CronoRef}>Search history</h2>
       </div>
       <div className={style.containerFiltri}>
         <div className={style.filtriCol1}>
