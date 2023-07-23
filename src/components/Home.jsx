@@ -151,15 +151,14 @@ function Home({
             <div className={style.containerConsigliati}>
               {lisatCorrispondenza.map((nome, index) => {
                 return (
-                  <div key={index}>
+                  <div
+                    onClick={() => {
+                      sceltaLista(nome, inputRef);
+                    }}
+                    key={index}
+                  >
                     <AiOutlineSearch className={style.consigliatiIco} />
-                    <p
-                      onClick={() => {
-                        sceltaLista(nome, inputRef);
-                      }}
-                    >
-                      {nome}
-                    </p>
+                    <p>{nome}</p>
                   </div>
                 );
               })}

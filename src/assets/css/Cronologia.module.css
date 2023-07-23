@@ -11,7 +11,7 @@
 }
 
 .bloccoBack {
-     
+     cursor: pointer;
     display: flex;
     justify-content: flex-start;
     align-items: center; 
@@ -76,6 +76,7 @@
 font-size: 15px;
 font-style: normal;
 font-weight: 600;
+cursor: pointer;
 }
 .filtriCol1 select{
     border: 0px solid #fff;
@@ -85,6 +86,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
 color: #47338D;
 font-size: 15px;
 padding: 4px 5px;
+cursor: pointer;
 }
 
 .baseCard {

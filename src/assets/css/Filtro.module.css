@@ -82,6 +82,7 @@ transition: all 0.3s;
     color: #47338D;
     font-size: 16px;
     padding: 0px 0px 0px 10px;
+    cursor: pointer;
 }
 .rigaUno select:focus{
     outline: 2px solid #6d59af;
@@ -128,6 +129,7 @@ transition: all 0.3s;
     padding: 3px 7px;
     font-size: 15px;
     color: #846FCC;
+    cursor: pointer;
 }
 .colRiga3BottUno {
     margin-right: 5px;
@@ -164,6 +166,7 @@ background: #47338D;
 box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
 padding: 5px 10px;
 color: #fff;
+cursor: pointer;
 
  }   
  .removeFilterBtn {
@@ -176,6 +179,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
 padding: 5px 10px;
 color: #47338D;
 margin-right: 5px;
+cursor: pointer;
  }
 
  .attivo {

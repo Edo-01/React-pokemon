@@ -37,12 +37,12 @@
 .contenitoreTesto {
     width: 100%; 
     max-width: 400px;
-    
     display: flex;
     padding-top: 10px;
     justify-content: flex-end;
 }
 .contenitoreTesto p {
+    cursor: pointer;
     color: #846FCC;
     font-size: 14px;
 font-style: normal;
@@ -101,7 +101,7 @@ font-weight: 500;
     padding-right: 20px;
 }
 .containerBall {
-    
+    cursor: pointer;
     position: fixed;
     bottom: 10px;
     left: 50%;
@@ -192,21 +192,28 @@ backdrop-filter: blur(5px);
     top: 0;
     left:0;
     width: 100%;
-    padding: 55px 20px 10px 23px ;
+    padding: 55px 0px 10px 0px ;
     border-radius: 30px;
+    overflow: hidden;
   z-index: 0;
 }
 .containerConsigliati > div {
-    padding: 5.5px 0px;
+    padding: 7px 23px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+  
+    cursor: pointer;
 }
 .containerConsigliati > div p {
+    width: 100%;
     font-size: 14px;
     color: #47338D;
     margin-left: 15px;
 }
 .consigliatiIco {
     color:#846FCC
+}
+.containerConsigliati > div:hover {
+    background-color: #d9d4e9;
 }
